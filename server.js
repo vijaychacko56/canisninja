@@ -13,7 +13,14 @@ const db = knex({
   }
 });
 
+app.get('/',(req,res)=> {
 
+db.select('*').from('users').then(users=>{
+	res.json(users);
+})
+.catch(err =>res.status(400).json('unable to get users'))
+
+});
 
 //start the server (use npm start command in cmd promp, in package.json start: nodemon server.js)
 const app = express();

@@ -18,7 +18,7 @@ const db = knex({
 
 //start the server (use npm start command in cmd promp, in package.json start: nodemon server.js)
 const app = express();
-app.listen(3000,()=>{
+app.listen(process.env.PORT || 3000,()=>{
 	console.log('server is running');
 })
 

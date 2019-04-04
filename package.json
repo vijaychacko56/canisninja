@@ -1,0 +1,30 @@
+{
+  "name": "canisninja",
+  "version": "1.0.0",
+  "description": "canisninja backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "knex": "^0.16.3",
+    "pg": "^7.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijaychacko56/canisninja.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/vijaychacko56/canisninja/issues"
+  },
+  "homepage": "https://github.com/vijaychacko56/canisninja#readme"
+}

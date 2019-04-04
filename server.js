@@ -61,7 +61,7 @@ var hash = bcrypt.hashSync(pass);
 				joined: new Date()
 			})
 			.then(user=>{
-				res.json(user);
+				res.json(user[0]);
 			})
 		})
 		.then(trx.commit)

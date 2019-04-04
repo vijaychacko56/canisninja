@@ -39,7 +39,8 @@ db.select('*').from('users').then(users=>{
 app.post('/register',(req,res)=>{
 const pass = req.body.password;
 const email = req.body.email;
-const name = req.body.name;
+const username = req.body.username;
+const fullname = req.body.fullname;
 
 var hash = bcrypt.hashSync(pass);
 	
@@ -55,7 +56,8 @@ var hash = bcrypt.hashSync(pass);
 			.returning('*')
 			.insert({
 				email: email,
-				name:name,
+				fullname:fullname,
+				username:username,
 				joined: new Date()
 			})
 			.then(user=>{
@@ -121,6 +123,7 @@ const Phone = req.body.Phone;
 const email = req.body.email;
 const Cusname = req.body.Cusname;
 const Servname = req.body.Servname;
+const ondate = req.body.ondate;
 
 db('services')
 .returning('*')
@@ -130,6 +133,7 @@ db('services')
 	email: email,
 	servname: Servname,
 	phone: Phone,
+	ondate:ondate,
 	daterequested: new Date()
 	})
 	.then(ServiceRecord =>{

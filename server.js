@@ -123,20 +123,20 @@ db.select('*').from('users').where({
 //4. Save Service
 app.post('/saveservice', (req, res) => {
 
-const Phone = req.body.Phone;
+const phone = req.body.phone;
 const email = req.body.email;
-const Cusname = req.body.Cusname;
-const Servname = req.body.Servname;
+const cusname = req.body.cusname;
+const servname = req.body.servname;
 const ondate = req.body.ondate;
 
 db('services')
 .returning('*')
 .insert({
 	//case of column names matter - all in small letters cus postgres saves only in small case
-	cusname: Cusname,
+	cusname: cusname,
 	email: email,
-	servname: Servname,
-	phone: Phone,
+	servname: servname,
+	phone: phone,
 	ondate:ondate,
 	daterequested: new Date()
 	})

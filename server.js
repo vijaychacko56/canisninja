@@ -65,7 +65,7 @@ var hash = bcrypt.hashSync(pass);
 				joined: new Date()
 			})
 			.then(user=>{
-				res.json('registersuccess');
+				res.json(user[0]);
 			})
 		})
 		.then(trx.commit)

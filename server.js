@@ -65,7 +65,7 @@ var hash = bcrypt.hashSync(pass);
 				joined: new Date()
 			})
 			.then(user=>{
-				res.json(user[0]);
+				res.json('registersuccess');
 			})
 		})
 		.then(trx.commit)
@@ -87,7 +87,7 @@ db.select('email', 'hash').from('login').where('email','=', req.body.email)
  if(isValid){
  	return db.select('*').from('users').where('email','=', req.body.email)
  	.then(user =>{
- 		res.json(user[0]);
+ 		res.json('loginsuccess');
  	})
  	.catch(err => res.status(400).json("unable to get user"))
  }
@@ -141,7 +141,7 @@ db('services')
 	daterequested: new Date()
 	})
 	.then(ServiceRecord =>{
-		res.json(ServiceRecord);
+		res.json('servicesaved');
 	})
 	.catch(err => {
 		res.status(400).json(err);

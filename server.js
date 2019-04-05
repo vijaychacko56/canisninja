@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 var knex = require('knex');
+var cors = require('cors');
 
 
 const db = knex({
@@ -17,6 +18,9 @@ const db = knex({
 
 //start the server (use npm start command in cmd promp, in package.json start: nodemon server.js)
 const app = express();
+app.use(cors());
+
+
 app.listen(process.env.PORT || 3000,()=>{
 	console.log(`server is running on ${process.env.PORT}`);
 })

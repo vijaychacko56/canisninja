@@ -128,12 +128,14 @@ const email = req.body.email;
 const cusname = req.body.cusname;
 const servname = req.body.servname;
 const ondate = req.body.ondate;
+const address = req.body.address;
 
 db('services')
 .returning('*')
 .insert({
 	//case of column names matter - all in small letters cus postgres saves only in small case
 	cusname: cusname,
+	address:address,
 	email: email,
 	servname: servname,
 	phone: phone,

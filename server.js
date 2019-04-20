@@ -165,7 +165,7 @@ app.get('/getservices',(req,res) => {
 
 //6. Get Services of a Particular User
 app.get('/getuserservice',(req,res) => {
-	db.select('*').from('services')..where('email','=', req.body.email)
+	db.select('*').from('services').where('email','=', req.body.email)
 	.then(services=>{
 	res.json(services);
 })
